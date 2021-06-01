@@ -11,11 +11,20 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
+            var numbers2 = [];
             //prac1-5〜 1から10までの数を順に10個挿入する
+            for (i = 0; i < 10; i++) {
+                numbers.push(i + 1);
+            }
             show(numbers);
             //prac1-5 全ての要素に10を足す
             //prac1-6 全ての要素に10をかける
+            for (i = 0; i < 10; i++) {
+                numbers2[i] = numbers[i] * 10;//２番目を書き換える
+                numbers[i] = numbers[i] + 10;//２番目を書き換える
+            }
             show(numbers);
+            show(numbers2);
         }
     </script>
 

@@ -11,11 +11,26 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
+            var numbers2 = [];
+            var numbers3 = [];
+            var numbers4 = [];
             //prac1-1 0を10個挿入する
             //prac1-2 乱数を10個挿入する
             //prac1-3 '田中'を10個挿入する
             //prac1-4 1から20までの数を順に20個挿入する
+            for (i = 0; i < 10; i++) {
+                var r = Math.floor(Math.random() * 11)
+                numbers.push(0);
+                numbers2.push(r);
+                numbers3.push("田中");
+
+            } for (i = 0; i < 20; i++) {
+                numbers4.push(i + 1);
+            }
             show(numbers);
+            show(numbers2);
+            show(numbers3);
+            show(numbers4);
         }
     </script>
 

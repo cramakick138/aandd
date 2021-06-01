@@ -23,9 +23,7 @@
             tmp = numbers[1];
             numbers[1] = numbers[3];
             numbers[3] = tmp;
-            tmp = 0;
             show(numbers);
-
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
             //(nとmは乱数にて決定する)
             createSequentialNumbers(numbers2, 10);
@@ -33,7 +31,6 @@
             numbers2[n] = numbers2[m];
             numbers2[m] = tmp;
             show(numbers2);
-
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
             createSequentialNumbers(numbers3, 10);
             for (i = 0; i < 20; i++) {

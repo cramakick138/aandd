@@ -11,13 +11,28 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
+            var numbers2 = [];
+            createSequentialNumbers(numbers, 10);
+            createRandomNumbers(numbers2, 10);
             //prac1-7 1からNまでの数を順にN個挿入する関数を作る
             //関数名：createSequentialNumbers(array, n)
+            function createSequentialNumbers(array, n) {
+                for (i = 0; i < n; i++) {
+                    array.push(i + 1);
+                }
+            }
             //できたら，関数定義をaandd.jsに移す
             //prac1-8 N個の乱数を挿入する関数を作る
             //関数名：createRandomNumbers(array, n)
+            function createRandomNumbers(array, n) {
+                for (i = 0; i < 10; i++) {
+                    var r = Math.floor(Math.random() * 10)
+                    array.push(r + 1);
+                }
+            }
             //できたら，関数定義をaandd.jsに移す
             show(numbers);
+            show(numbers2);
         }
     </script>
 
