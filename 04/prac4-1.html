@@ -11,24 +11,27 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            createRandomNumbers(numbers, 10);
+            createRandomNumbers(numbers, 5);
             show(numbers);
             //合計を求める
             var total = 0;
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
-            for (i = 0; i < 10; i++) {
-                total = total + numbers[i];
+            for (i = 0; i < 5; i++) {
+                //show(numbers);
+                numbers[i] = numbers[i] + 2;
                 // total = total / 10;
+
             }
-            show(total);
+            show(numbers);
+
             //prac3-2 10個の乱数の平均を求める
             //prac3-3 10個の乱数の最大値を求める
-            for (i = 0; i < 10; i++) {
-                var max = numbers[0];
-                if (numbers[i] > max) {
-                    max = numbers[i];
-                }
-            }
+            // for (i = 0; i < 10; i++) {
+            //     var max = numbers[0];
+            //     if (numbers[i] > max) {
+            //         max = numbers[i];
+            //     }
+            // }
             //prac3-4 10個の乱数の最小値を求める
         }
     </script>
