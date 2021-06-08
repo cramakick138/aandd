@@ -11,28 +11,28 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            createSequentialNumbers(numbers, 10);
+            createOrderedRandomNumbers(numbers, 10);
             show(numbers);
             //合計を求める
             var result = -1;
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
-            var left = 0;
-            var right = numbers.length - 1;
-            var middle;
-            var searchIndex = 1;
-            while (left <= right) {
-                middle = Math.floor((left + right) / 2);
-                if (numbers[middle] == searchIndex) {
-                    result = middle;
+            var lower = 0;
+            var upper = numbers.length - 1;
+            var mid;
+            var searchIndex = 25;
+            while (lower <= upper) {
+                mid = Math.floor((lower + upper) / 2);
+                if (numbers[mid] == searchIndex) {
+                    result = mid + 1;
                     show(result);
                     break;
-                } else if (numbers[middle] < searchIndex) {
-                    left = middle + 1
-                    //console.log(middle);
+                } else if (numbers[mid] < searchIndex) {
+                    lower = mid + 1
+                    //console.log(mid);
                     //show(numbers);
-                } else if (numbers[middle] > searchIndex) {
-                    right = middle - 1;
-                    console.log(middle);
+                } else if (numbers[mid] > searchIndex) {
+                    upper = mid - 1;
+                    console.log(mid);
                     //show(numbers);
                 } else {
                     result = "No result";
