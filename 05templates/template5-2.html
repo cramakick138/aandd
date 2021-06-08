@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createRandomNumbers(numbers, 10000);
+            //show(numbers);
+            var startTime = new Date();
+            //処理            
+            //ここに，並び替えのプログラムを書く
+            for (i = 0; i < numbers.length - 1; i++) {
+                var min = numbers[i];
+                var address = i;
+                for (var j = i + 1; j < numbers.length; j++) {
+                    //show(numbers);
+                    if (min > numbers[j]) {
+                        min = numbers[j];
+                        address = j;
+                        // total = total / 10;
+                    }
+                }
+                var tmp = numbers[i];
+                numbers[i] = numbers[address];
+                numbers[address] = tmp;
+            }
+            //処理終わり
+            var endTime = new Date();
+            var time = endTime - startTime;
+            show(time + 'ミリ秒');
+            //show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>時間の測定</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

@@ -11,14 +11,27 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            createOrderedRandomNumbers(numbers, 100);
+            createRandomNumbers(numbers, 10000);
+            //show(numbers);
             var startTime = new Date();
             //処理            
             //ここに，並び替えのプログラムを書く
+            for (i = 0; i < numbers.length; i++) {
+                for (var j = numbers.length - 1; j > i; j--) {
+                    //show(numbers);
+                    if (numbers[j] < numbers[j - 1]) {
+                        var tmp = numbers[j];
+                        numbers[j] = numbers[j - 1];
+                        numbers[j - 1] = tmp;
+                        // total = total / 10;
+                    }
+                }
+            }
             //処理終わり
             var endTime = new Date();
             var time = endTime - startTime;
             show(time + 'ミリ秒');
+            //show(numbers);
         }
     </script>
 
