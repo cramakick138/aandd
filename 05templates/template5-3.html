@@ -11,28 +11,27 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-            createRandomNumbers(numbers, 10000);
+            createRandomNumbers(numbers, 10);
             // show(numbers);
             var startTime = new Date();
             //処理            
             //ここに，並び替えのプログラムを書く
+            var mark = numbers[0];
             for (i = 0; i < numbers.length; i++) {
-                var mark = numbers[i];
-                for (var j = i - 1; j > 0; j--) {
-                    //show(numbers);
-                    if (numbers[j] < numbers[j - 1]) {
-                        var tmp = numbers[j];
-                        numbers[j] = numbers[j - 1];
-                        numbers[j - 1] = tmp;
-                        // total = total / 10;
+                if (numbers[i] > mark) {
+                    for (var j = numbers.length - 1; j >= i; j--) {
+                        numbers[j + 1] = numbers[j];
                     }
+                    //show(numbers);
+                    numbers[i] = mark;
+                    break;
                 }
             }
             //処理終わり
             var endTime = new Date();
             var time = endTime - startTime;
             show(time + 'ミリ秒');
-            //show(numbers);
+            show(numbers);
         }
     </script>
 
@@ -45,3 +44,13 @@
 </body>
 
 </html>
+
+<!-- var minindex=0;
+var min = 10000;
+for(var i=0; i<numbers.length; i++)
+if (numbers[i]<min){
+    min=numbers[i];
+    minindex=i;
+}
+numbers2.push(min) -->
+//text.split('') chars.join('')
