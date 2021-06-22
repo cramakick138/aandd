@@ -28,6 +28,9 @@
             show(chars);
             var text2 = chars.join('');
             show(text2);
+            if (text2 == text) {
+                document.getElementById('rslt').value = "この文章は回文です";
+            }
         }
 
     </script>
@@ -36,9 +39,10 @@
 
 <body>
     <h1>split</h1>
-    <input id="tf1" type="text" value="こんにちは">
+    <input id="tf1" type="text" value="しんぶんし">
     <button onclick="runButtonPressed()">run!</button>
     <p id="res"></p>
+    <p id="rslt"></p>
 </body>
 
 </html>

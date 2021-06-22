@@ -10,28 +10,33 @@
 
     <script>
         var fruits = {};
+        var kudamono = {};
 
         $().ready(function () {
             fruits['apple'] = 'りんご';
             fruits['orange'] = 'みかん';
+            kudamono['りんご'] = 'apple';
+            kudamono['みかん'] = 'orange';
         });
 
         function registerButtonPressed() {
             var english = document.getElementById('tf3').value;
             var japanese = document.getElementById('tf4').value;
             fruits[english] = japanese;
-            //document.getElementById('tf4') = japanese;
+            kudamono[japanese] = english;
             console.log(fruits);
+            console.log(kudamono);
         }
 
         function runButtonPressed() {
             var english = document.getElementById('tf1').value;
-            var japanese = fruits[english];
-            if (fruits[english] == null) {
-                document.getElementById('tf2').value = "見つかりませんでした";
-            } else {
-                document.getElementById('tf2').value = japanese;
-            }
+            var japanese = document.getElementById('tf2').value;
+            english = kudamono[japanese];
+            document.getElementById('tf1').value = english;
+            console.log(english);
+            japanese = fruits[english];
+            document.getElementById('tf2').value = japanese;
+            console.log(japanese);
         }
 
     </script>
